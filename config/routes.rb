@@ -2,7 +2,7 @@ Hijabfard::Application.routes.draw do
   
   get "ckeditor/index"
 
-  #match "sign_out" => "devise/sessions#destroy", :as => "destroy_user_session"
+  match "sign_out" => "devise/sessions#destroy", :as => "destroy_user_session"
   #devise_for :users 
   devise_for :users #, :controllers => {:sessions => "sessions"}
   devise_scope :user do 
