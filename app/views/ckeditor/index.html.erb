@@ -1,0 +1,4 @@
+<%= javascript_include_tag :ckeditor %>
+<%= cktext_area_tag(«test_area», «Ckeditor is the best») %>
+
+<%= cktext_area_tag(«content», «Ckeditor», :input_html => {:cols => 10, :rows => 20}, :toolbar => ‘Easy’) %>

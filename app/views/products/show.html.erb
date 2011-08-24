@@ -1,0 +1,27 @@
+<% title "Продукты" %>
+<div id="show_products">
+      <h3><%= @product.title %></h3>
+      <p style="font-size: 18px">Описание:<br/>
+      <%= @product.description %></p>
+
+
+  <center><%= image_tag(@product.image_url, :alt => @product.title, :class => "round") %></center>
+
+
+  <h3>Всего продано <%= @product.rating %> шт.</h3>
+  <p>
+  <h3><b>Цена:</b>
+  <%= @product.price %> руб.</h3>
+</p>
+</div>
+<h3>Отзывы</h3>
+<div id="comments">
+  <%= render @product.comments %>
+</div>
+<%= link_to "Оставить отзыв", new_product_comment_path(@product), :remote => true, :id => 'new_comment_link' %>
+
+
+<% if session[:user_id] %>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+ <% end %>

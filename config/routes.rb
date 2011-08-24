@@ -1,4 +1,22 @@
 Hijabfard::Application.routes.draw do
+  
+  get "ckeditor/index"
+
+  #match "sign_out" => "devise/sessions#destroy", :as => "destroy_user_session"
+  #devise_for :users 
+  devise_for :users #, :controllers => {:sessions => "sessions"}
+  devise_scope :user do 
+    match "users/sign_up" => "devise/registrations#new", :as => "sign_up"
+    get "users/password/new" => "devise/passwords#new", :as => "recover_password", :method => :get
+  end
+  
+  devise_for :users, :controllers => { :registrations => "registrations" } do
+    match "profile/edit" => "registrations#edit", :as => "edit_member_registration"
+  end
+  match "/pages/:id/edit" => "pages#edit", :as => "pages_edit"
+  resources :pages
+  resources :products
+  root :to => "pages#home"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
