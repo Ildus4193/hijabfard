@@ -1,0 +1,82 @@
+$("#notice").hide();
+$("#cart").html("<%= @cart.total_price %> руб.");
+if (<%= @cart.total_items %> >= 1) {
+$("#cart").show('slow');
+<!--$.jGrowl("<%= escape_javascript(render(@cart)) %>");$.jGrowl("<%= @current_item.product.image_url %>");-->
+};
+
+
+function createTable()
+    {
+
+    var newElem=document.createElement("table");
+    newElem.border=1;
+    newElem.id="nova";
+
+    var newRow=newElem.insertRow(0);
+    var newCell = newRow.insertCell(0);
+    newCell.width="100";
+    newCell.align="center";
+    newCell.innerHTML="<img class=\"round\" src=\"images/<%= @current_item.product.image_url %>\" border=\"0\"/>";
+
+
+    var newCell = newRow.insertCell(-1);
+    newCell.width="100";
+    newCell.align="center";
+    newCell.innerText="<%=@line_item.product.title %> ";
+
+    var newRow=newElem.insertRow(1);
+    var newCell = newRow.insertCell(0);
+    newCell.width="100";
+    newCell.align="center";
+
+    //addText=document.createTextNode
+    newCell.innerText=("<%=@current_item.total_price%> руб.");
+    //newCell.appendChild(addText);
+
+    var newCell = newRow.insertCell(-1);
+    newCell.width="100";
+    newCell.align="center";
+    addElem=document.createElement("b");
+    addText=document.createTextNode(" ");//генерируем текстовый узел
+    addElem.appendChild(addText);//созданный текстовый узел добавляем к новому элементу (addElem)
+    newCell.appendChild(addElem);//полученный узел (addElem) добавляем в ячейку
+
+    document.body.appendChild(newElem);//прописываем созданную таблицу на страницу
+    }
+
+var newdiv = document.createElement('div');
+var divIdName = 'new';
+newdiv.setAttribute('id',divIdName);
+newdiv.style.width = "200px";
+newdiv.style.height = "300px";
+newdiv.style.top = "-140px";
+newdiv.style.position = "relative";
+
+document.body.appendChild(newdiv);
+
+<% if @line_item.product_id == @current_item.product_id %>
+
+$.jGrowl('<h3>Добавлен!</h3>',{
+    beforeOpen: function(e,m,o)  {
+           createTable();
+           $("#new").append($("#nova"));
+           $("div#jGrowl").append($("#new"));
+
+    },
+    beforeClose: function(e,m)  {
+
+           $("#nova").remove();
+           $("#new").remove();
+
+
+    },
+     close: function(e,m,o)  {
+
+           $("#nova").remove();
+
+
+    }
+});
+<% end%>
+

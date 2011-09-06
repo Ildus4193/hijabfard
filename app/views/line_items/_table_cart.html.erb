@@ -1,0 +1,13 @@
+<table style="height: 10px;"> <tr>
+        <td style="width: 15px;">
+    <%= button_to "-", line_item_path(  :quantity => (line_item.quantity - 1), :id => line_item), :remote =>true, :method => :put  %>
+        </td>
+        <td id="quantity_item<%= line_item.id %>" style="width: 15px; text-align: center;">
+    <%= line_item.quantity %>
+        </td>
+        <td style="width: 15px;">
+    <%= button_to "+", line_item_path( :quantity => (line_item.quantity + 1), :id => line_item), :remote =>true, :method => :put %>
+        </td>
+        <td style="font-size: 22px;">
+     &times; <%= line_item.product.price %> руб.</td></tr>
+</table>

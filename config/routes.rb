@@ -3,6 +3,8 @@ Hijabfard::Application.routes.draw do
   get "ckeditor/index"
 
   resources :categories
+  resources :line_items
+  resources :carts
   #devise_for :users 
   devise_for :users #, :controllers => {:sessions => "sessions"}
   devise_scope :user do 

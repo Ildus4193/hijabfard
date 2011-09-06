@@ -1,0 +1,14 @@
+<div class="cart_title"><%= link_to 'Ваш рюкзак', cart %></div>
+<table>
+
+  <%= render(cart.line_items) %>
+
+</table>
+
+    <p class="price">Всего <%= @cart.total_price %> руб.</p>
+
+<%= button_to "Купить" , new_order_path, :method => :get %>
+<% if can? :destroy, Cart%>
+<%= button_to 'Очистить рюкзак', cart, :method => :delete,
+  :confirm => 'Так надо?' %>
+<% end %>
