@@ -1,7 +1,6 @@
-<% title "Редактирование" %>
-<h1>Редактирование</h1>
-
+﻿<% title "Редактирование" %>
+<h2><%= yield(:title) %></h2>
 <%= render 'form' %>
 
-<%= link_to 'Show', @product %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Показать', @product %> |
+<%= link_to 'Назад', products_path %>

@@ -25,63 +25,63 @@
         </ul>
     </div>
     <div id="left-col">
-    	<div id="sidebar">
-        	<p style="margin-left: 20px; color: #663366; font: 16px 'Myriad Pro' Verdana, Geneva, sans-serif;">
-	            <%= image_tag  "img/sidebar.png" %>
-    	        Каталог
-            </p>
-            <ul>
-            	<li><a href="#">Платья</a></li>
-                <li><a href="#">Сарафаны</a></li>
-                <li><a href="#">Туники</a></li>
-                <li><a href="#">Юбки</a></li>
-                <li><a href="#">Одежда для дома</a></li>
-                <li><a href="#">Аксессуары</a></li>
-                <li><a href="#">Распродажа</a></li>
-                <li><a href="#">Сувенирная продукция</a></li>
-            </ul>
+      <div id="sidebar">
+        <p style="margin-left: 20px; color: #663366; font: 16px 'Myriad Pro' Verdana, Geneva, sans-serif;">
+          <%= image_tag  "img/sidebar.png" %>
+          Каталог
+        </p>
+        <ul>
+          <li><%=  link_to "Платья", category_path(:id => 1) %></li>
+          <li><a href="#">Сарафаны</a></li>
+          <li><a href="#">Туники</a></li>
+          <li><a href="#">Юбки</a></li>
+          <li><a href="#">Одежда для дома</a></li>
+          <li><a href="#">Аксессуары</a></li>
+          <li><a href="#">Распродажа</a></li>
+          <li><a href="#">Сувенирная продукция</a></li>
+        </ul>
+      </div>
+      <div id="sidebar_rassilka">
+        <p style="margin-bottom: 10px; margin-left: 25px; color: #663366; font: 16px 'Myriad Pro' Verdana, Geneva, sans-serif;">
+          <%= image_tag   "img/sidebar.png" %>
+          Рассылка
+        </p>
+        <div id="rassilka">
+          <label for="user_name_rassilka">Ваше имя:</label><br />
+          <input id="user_rassilka" type="text" value="" size="20" name="user[name]" />
         </div>
-        <div id="sidebar_rassilka">
-        	<p style="margin-bottom: 18px; margin-left: 25px; color: #663366; font: 16px 'Myriad Pro' Verdana, Geneva, sans-serif;">
-	            <%= image_tag   "img/sidebar.png" %>
-    	        Рассылка
-            </p>
-            <div id="rassilka">
-            	<label for="user_name_rassilka">Ваше имя:</label><br />
-            	<input id="user_rassilka" type="text" value="" size="20" name="user[name]" />
-			</div>
-            <div id="rassilka">
-            	<label for="user_email_rassilka">Ваш e-mail:</label><br />
-            	<input id="user_rassilka" type="text" value="" size="20" name="user[email]" />
-			</div>
-            <div id="rassilka">
-            	<label for="capcha_rassilka">Секретный код:</label><br />
-                <%= image_tag "img/capch_bg.png" %><br />
-                <label style="color: #996699; text-decoration:underline;" for="capcha_rassilka">Не видно цифр</label>
-            </div>
-            <div id="rassilka_capch">
-            	<label for="capcha_rassilka">Повторить:</label><br />
-                <input id="capchafield" type="text" onblur="clearText(this)" onfocus="clearText(this)" value="" name="capch" />
-<input id="capcha_btn" type="submit" value="" name="capch_btn"  />
-            </div>
-            <div id="sidebar_bottom">
-            	<div id="sidebar_bottom_menu1">
-                	<%= image_tag "img/question.png" %>
-                </div>
-                <div id="sidebar_menu_text" style="width: 170px;"><a href="#">Часто задаваемые вопросы</a>
-                </div>
-                <div id="sidebar_bottom_menu2">
-                	<%= image_tag "img/akcii.png" %>
-                </div>
-                <div id="sidebar_menu_text" style="width: 40px;"><a href="#">Акции</a>
-                </div>
-                <div id="sidebar_bottom_menu3">
-                	<%= image_tag "img/sertifikat.png" %>
-                </div>
-                <div id="sidebar_menu_text" style="width: 165px;"><a href="#">Подарочные сертификаты</a>
-                </div>
-            </div>
+        <div id="rassilka">
+          <label for="user_email_rassilka">Ваш e-mail:</label><br />
+          <input id="user_rassilka" type="text" value="" size="20" name="user[email]" />
         </div>
+        <div id="rassilka">
+          <label for="capcha_rassilka">Секретный код:</label><br />
+          <%= image_tag "img/capch_bg.png" %><br />
+          <label style="color: #996699; text-decoration:underline;" for="capcha_rassilka">Не видно цифр</label>
+        </div>
+        <div id="rassilka_capch">
+          <label for="capcha_rassilka">Повторить:</label><br />
+          <input id="capchafield" type="text" onblur="clearText(this)" onfocus="clearText(this)" value="" name="capch" />
+          <input id="capcha_btn" type="submit" value="" name="capch_btn"  />
+        </div>
+      </div>
+      <div id="sidebar_bottom">
+        <div id="sidebar_bottom_menu1">
+          <%= image_tag "img/question.png" %>
+        </div>
+        <div id="sidebar_menu_text" style="width: 170px;"><a href="#">Часто задаваемые вопросы</a>
+        </div>
+        <div id="sidebar_bottom_menu2">
+          <%= image_tag "img/akcii.png" %>
+        </div>
+        <div id="sidebar_menu_text" style="width: 40px;"><a href="#">Акции</a>
+        </div>
+        <div id="sidebar_bottom_menu3">
+          <%= image_tag "img/sertifikat.png" %>
+        </div>
+        <div id="sidebar_menu_text" style="width: 165px;"><a href="#">Подарочные сертификаты</a>
+        </div>
+      </div>
     </div>
     <div id="section_body">
     <div style="background-color: #fff; width: 791px; height: 100%;margin-left: 2px;">
@@ -105,14 +105,14 @@
                 <p>
                 Впервые, известная венгерская фирма по производству обычных купальников выпустила мусульманские. Для производства этих купальников используются специальные нити и купальная ткан</p>
             </div>
-                <%# if current_page?(:controller => 'pages', :action => 'home') %>
+                <% if params[:id] == 'home' %>
             <div id="info_b">
             	<p>Мусульманская одежда HIJAB FARD</p>
                 <p>Мусульманская одежда торговой марки Irada – это: качественный пошив, хорошая ткань, отличная посадка по фигуре, скромные, но при этом модные и стильные модели, а самое главное – адекватная цена!</p>
                 <p>Мусульманская одежда отшивается в крупных цехах, с огромным опытом работы, ткань используется только производства Турции, Италии, Германии; лекала заказываем в компании по производству лекал. Опыт и новейшие технологии позволяют нам быть уверенными, что в результате мусульманская одежда, производимая нами, идеально садится на любую фигуру мусульманки. Наши дизайнеры со всей ответственностью подходят к поставленной задаче, а именно придумывают модели хиджабов, которые соответствуют шариату, но при этом изучают и модные веяния каждого сезона и применяют эти знания на практике. Своим внешним видом мусульманка рассказывает об исламе, зачастую о роли мусульманки в обществе судят именно по тому как она выглядит.</p>
                 <p>Наша задача показать, что мусульманка в хиджабе может выглядеть стильно и модно. Мы используем цвета и стили, модные в этом сезоне. Мусульманка в одежде фирмы «Irada» - стильная девушка, женщина с хорошим вкусом, соблюдающая нормы шариата.</p>
             </div>
-                <%# end %>
+                <% end %>
         </div>
         </div>
     </div>

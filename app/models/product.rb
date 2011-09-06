@@ -1,17 +1,18 @@
 class Product < ActiveRecord::Base
+  
+  has_attached_file :avatar, :styles => { :medium => "400x500>", :thumb => "240x380>" }
   default_scope :order => 'title'
   has_many :line_items
   has_many :orders, :through => :line_items
-  
-  has_and_belongs_to_many :categories
-  has_many :comments, :dependent => :destroy
+  belongs_to :categories
+
   
   before_destroy :ensure_not_referenced_by_any_line_item
   
-  validates :title, :description, :image_url, :presence => true, :uniqueness => true
+  #validates :title, :presence => true, :uniqueness => true
   validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
 
-  validates :title, :length => {:minimum => 3}
+ # validates :title, :length => {:minimum => 3}
   
   def self.search(query)
     where("title like ?", "%#{query}%")

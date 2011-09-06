@@ -1,4 +1,4 @@
-<%= form_for(@product) do |f| %>
+<%= form_for(@product, :html => { :multipart => true }) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation"> 
       <h2><%= pluralize(@product.errors.count, "error") %>
@@ -13,34 +13,43 @@
   <% end %>
  
   <div class="field"> 
-    <%= f.label :title %><br /> 
+    <%= f.label :title, "Название" %><br /> 
     <%= f.text_field :title %>
   </div> 
   <div class="field"> 
-    <%= f.label :description %><br /> 
+    <%= f.label :description, "Описание" %><br /> 
 <!-- START_HIGHLIGHT --> 
     <%= f.text_area :description, :rows => 6 %>
 <!-- END_HIGHLIGHT --> 
+  </div>
+  <div class="field"> 
+    <%= f.label :price, "Цена" %><br /> 
+    <%= f.text_field :price %>
   </div> 
   <div class="field"> 
-    <%= f.label :image_url %><br /> 
-    <%= f.text_field :image_url %>
+    <%= f.label :size, "Размер" %><br /> 
+    <%= f.text_field :size %>
+  </div>
+  <div class="field"> 
+    <%= f.label :quantity, "Колчество" %><br /> 
+    <%= f.text_field :quantity %>
   </div> 
   <div class="field">
-    <%= f.label "Categories" %><br />
-    <% for category in Category.all %>
-    <%= check_box_tag 'product[category_ids][]', category.id, @product.category_ids.include?(category.id), :id => dom_id(category) %>
-    <%= label_tag dom_id(category), category.name, :class => "check_box_label" %>
-    <% end %>
+    <%= f.label :avatar, "Изображение" %><br />  
+    <%= f.file_field :avatar %>
+  </div> 
+  <div class="field">
+    <%#= f.label "Категория" %><br />
+    <%# for category in Category.all %>
+    <%#= check_box_tag 'product[category_id][]', category.id, @product.category_id.include?(category.id), :id => dom_id(category) %>
+    <%#= label_tag dom_id(category), category.name, :class => "check_box_label" %>
+    <%# end %>
   </div>
-  <div class="field"> 
-    <%= f.label :price %><br /> 
-    <%= f.text_field :price %>
-  </div>
-  <div class="field"> 
-    <%= f.label :size %><br /> 
-    <%= f.text_field :size %>
-  </div>  
+  
+  
+  
+
+  
   <div class="actions"> 
     <%= f.submit %>
   </div> 

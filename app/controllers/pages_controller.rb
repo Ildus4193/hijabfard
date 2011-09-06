@@ -36,6 +36,9 @@ class PagesController < HighVoltage::PagesController
     end
   end
   
+  def home
+    
+  end
   
   protected
     def layout_for_page
