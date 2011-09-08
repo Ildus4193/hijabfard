@@ -5,6 +5,7 @@ Hijabfard::Application.routes.draw do
   resources :categories
   resources :line_items
   resources :carts
+  resources :orders
   #devise_for :users 
   devise_for :users #, :controllers => {:sessions => "sessions"}
   devise_scope :user do 

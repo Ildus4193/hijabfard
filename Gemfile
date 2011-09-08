@@ -11,6 +11,7 @@ gem "paperclip", "~> 2.3"
 gem 'high_voltage', '0.9.3'
 gem 'jquery-rails'
 gem 'ckeditor', '3.4.2.pre'
+gem 'will_paginate', '~> 3.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
