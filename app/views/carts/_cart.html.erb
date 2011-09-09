@@ -8,7 +8,6 @@
     <p class="price">Всего <%= @cart.total_price %> руб.</p>
 
 <%= button_to "Купить" , new_order_path, :method => :get %>
-<% if can? :destroy, Cart%>
+
 <%= button_to 'Очистить рюкзак', cart, :method => :delete,
   :confirm => 'Так надо?' %>
-<% end %>

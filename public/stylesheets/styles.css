@@ -600,13 +600,13 @@ li#contacts a:hover, li#contacts a:active{
 }
 #show_products {
     width: 750px;
+    margin-bottom: 55px;
 }
 #show_products h2 {
 color: #993399;
 }
 #show_products img {
     width: 280px;
-    
     position: relative;
     top: 50px;
     left: 60px;

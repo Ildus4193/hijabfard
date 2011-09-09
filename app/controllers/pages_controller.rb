@@ -6,6 +6,7 @@ class PagesController < HighVoltage::PagesController
   before_filter :authenticate_user!, :except => [:home, :shops, :index, :show]
   
   def show
+    @cart = current_cart
     @page = Page.find_by_title(params[:id])
     respond_to do |format|
       format.html # show.html.erb
@@ -37,7 +38,7 @@ class PagesController < HighVoltage::PagesController
   end
   
   def home
-    
+    @cart = current_cart
   end
   
   protected

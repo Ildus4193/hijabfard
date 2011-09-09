@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.xml
   def show
-    #@cart = current_cart
+    @cart = current_cart
     @product = Product.find(params[:id])
 
     respond_to do |format|

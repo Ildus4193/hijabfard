@@ -84,7 +84,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to(store_path(:category => 'showcase'), :method => :post ) }
+      format.html { redirect_to current_cart }
       format.xml  { head :ok }
     end
   end

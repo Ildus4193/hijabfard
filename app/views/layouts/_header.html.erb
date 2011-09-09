@@ -42,7 +42,7 @@
     </div>
     <div id="cart" style=" position: absolute; float: right; top: 70px; right: 45px;">
     <%= image_tag("img/cart.png", :alt => "Cart") %>
-    <p style=" position: relative; top: 10px; left: 5px; font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #660066; text-decoration:underline;">Корзина (1)</p>
+    <p style=" position: relative; top: 10px; left: 5px; "><%= link_to 'Корзина (1)', @cart, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #660066; text-decoration:underline;" %></p>
     </div>
 </div>
 

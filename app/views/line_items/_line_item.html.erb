@@ -4,7 +4,7 @@
 <% else %>
 <tr>
 <% end %>
-  <td style="width: 100px;"><%= image_tag(line_item.product.image_url, :class => "round")%> </td>
+  <td style="width: 100px;"><%= image_tag(line_item.product.avatar.url(:thumb), :class => "round")%> </td>
   <td><h3><%= line_item.product.title %></h3>
   <div id="descrip" class="round">
 
