@@ -6,8 +6,9 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+#gem 'mysql2'
 gem 'devise'
-gem "paperclip", "~> 2.3"
+gem 'paperclip', '2.3.8'
 gem 'high_voltage', '0.9.3'
 gem 'jquery-rails'
 gem 'ckeditor', '3.4.2.pre'
