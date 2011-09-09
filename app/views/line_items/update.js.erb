@@ -1,4 +1,4 @@
-$('table').html("<%= escape_javascript(render(@cart.line_items))%>");
-$("#cart").html("<%= @cart.total_price %> руб.");
+$('#cart_table').html("<%= escape_javascript(render(@cart.line_items))%>");
+$("#cart_total_items").html("Корзина (<%= @cart.total_items %>)");
 $(".price").html("Всего <%= @cart.total_price %> руб.");
 

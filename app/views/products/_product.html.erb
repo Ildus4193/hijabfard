@@ -3,11 +3,12 @@
 <div style="vertical-align: bottom;position:relative; height: 412px; ">
 		<%= link_to (image_tag(product.avatar.url(:thumb), :class => "round")), product %>
 </div>
-<div style=" height: 100px;"> 
+<div style=" height: 35px;"> 
     		<p><%= product.title %></p>
+                <p><%= product.price %>
 <%= link_to 'Удалить', product, 
             :confirm => 'Are you sure?',
-            :method => :delete %> 
+            :method => :delete %> </p>
 </div>
 <% if i> 3 %>
    <div style="clear: left; padding-bottom: 35px;"></div>

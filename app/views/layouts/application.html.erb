@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title><%= h(yield(:title) || "Untitled")%></title>
     <%= csrf_meta_tag %>
     <%= render 'layouts/stylesheets' %>
     <%= javascript_include_tag "jquery-1.4.4.min.js", "jquery.rails.js", "jquery.color.js" %>
-    <%= javascript_include_tag :defaults %>
+    <%#= javascript_include_tag :defaults %>
     <%#= include_tiny_mce_if_needed %>
     <%= javascript_include_tag :ckeditor %>
     
@@ -24,6 +24,7 @@
             <li id="contacts"><a href="#">Контакты</a></li>
         </ul>
     </div>
+      <div style="position: relative;">
     <div id="left-col">
       <div id="sidebar">
         <p style="margin-left: 20px; color: #663366; font: 16px 'Myriad Pro' Verdana, Geneva, sans-serif;">
@@ -84,7 +85,7 @@
       </div>
     </div>
     <div id="section_body">
-    <div style="background-color: #fff; width: 791px; height: 100%;margin-left: 2px;">
+    <div style="background-color: #fff; width: 789px; height: 100%;margin-left: 2px;">
     	<div id="content">
           <% flash.each do |key, value| %>
             <div class="flash <%= key %>"><%= value %></div>
@@ -116,9 +117,11 @@
         </div>
         </div>
     </div>
+    </div>
+    </div>
     <div id="section_bottom">
-	</div>
-</div>
+    </div>
+
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
   </body>
