@@ -1,1 +1,4 @@
 <%= render @products %>
+<div class="digg_pagination">
+  <%= will_paginate @products, :container => false %>
+</div>

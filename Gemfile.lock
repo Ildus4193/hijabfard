@@ -84,6 +84,7 @@ GEM
     tzinfo (0.3.29)
     warden (1.0.5)
       rack (>= 1.0)
+    will_paginate (3.0.0)
 
 PLATFORMS
   ruby
@@ -96,3 +97,4 @@ DEPENDENCIES
   paperclip (= 2.3.8)
   rails (= 3.0.9)
   sqlite3
+  will_paginate (~> 3.0)

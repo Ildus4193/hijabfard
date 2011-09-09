@@ -1,13 +1,13 @@
-<div class="cart_title"><%= link_to 'Ваш рюкзак', cart %></div>
-<table>
-
+<h2>Ваша корзина</h2>
+<div id="cart_table" style="margin-top: 20px;">
   <%= render(cart.line_items) %>
+</div>
 
-</table>
-
-    <p class="price">Всего <%= @cart.total_price %> руб.</p>
+<div style="clear: both; position: relative; top: 20px; height: 95px;">
+<h2 class="price">Итого <%= @cart.total_price %> руб.</h2>
 
 <%= button_to "Купить" , new_order_path, :method => :get %>
 
-<%= button_to 'Очистить рюкзак', cart, :method => :delete,
+<%= button_to 'Очистить корзину', cart, :method => :delete,
   :confirm => 'Так надо?' %>
+</div>
