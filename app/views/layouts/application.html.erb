@@ -17,11 +17,11 @@
 	<div id="nav">
     	<ul>
             <li id="glav_item"><%=  link_to "Главная", root_path %></li>
-            <li id="shop_item"><%=  link_to "Магазины", page_path("shops") %></li>
-            <li id="how_to"><%=  link_to raw("Как сделать <br />заказ"), page_path("how_to") %></li>
-            <li id="dostavka"><a href="#">Доставка</a></li>
-            <li id="for_ppartners"><a href="#">Партнерам</a></li>
-            <li id="contacts"><a href="#">Контакты</a></li>
+            <li id="shop_item"><%=  link_to_pages('Магазины', "shops") %></li>
+            <li id="how_to"><%= link_to_pages(raw("Как сделать <br />заказ"), "how_to") %></li>
+            <li id="dostavka"><%=  link_to_pages('Доставка', "shops") %></li>
+            <li id="for_ppartners"><%=  link_to_pages('Партнерам', "shops") %></li>
+            <li id="contacts"><%=  link_to_pages('Контакты', "shops") %></li>
         </ul>
     </div>
       <div style="position: relative;">

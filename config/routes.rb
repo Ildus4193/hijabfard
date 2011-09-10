@@ -1,13 +1,19 @@
 Hijabfard::Application.routes.draw do
   
+  devise_for :admins
+
   get "ckeditor/index"
 
   resources :categories
   resources :line_items
   resources :carts
   resources :orders
+  
+  devise_scope :admin do 
+    match "admin" => "devise/sessions#new", :as => "admin_sign_in"
+  end
   #devise_for :users 
-  devise_for :users #, :controllers => {:sessions => "sessions"}
+  devise_for :users #, :controllers => {:sessions => "users/sessions"}
   devise_scope :user do 
     #match "sign_in" => "devise/sessions#new", :as => "sign_in"
     match "sign_out" => "devise/sessions#destroy", :as => "destroy_session_user"

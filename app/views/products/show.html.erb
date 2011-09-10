@@ -19,7 +19,7 @@
   </div>
 </div>
 
-<% if user_signed_in? %>
+<% if admin_signed_in? %>
 <%= link_to 'Редактировать', edit_product_path(@product) %> |
 <%= link_to 'Назад', products_path %>
   
