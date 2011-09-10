@@ -29,8 +29,29 @@
         </span>
       <% end %>
     
+    <% if admin_signed_in?  %>
+    <script type="text/javascript">
+      $(document).ready(function(init){
+      $('#forget_pass').hide();
+      $('#user_new').hide();
+      });
+    </script>
+    <span style=" position: relative; top: 10px; left: 505px; ">
+        <%= link_to 'Покупатели', orders_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"    %>
+    </span>
+    <span style=" position: relative; top: 10px; left: 510px; ">
+        <%= link_to 'Пользователи', orders_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"   %>
+    </span>
+    <span style=" position: relative; top: 10px; left: 515px; ">
+      <%= link_to "Мой профиль", edit_admin_registration_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"  %>
+      </span>
+      <span style=" position: relative; top: 10px; left: 520px; ">
+      <%= link_to "Выйти", destroy_admin_session_path, :method => :delete, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"  %>
+      </span>
+    <% end %>
+    
       <span style=" position: relative; top: 10px; left: 750px; ">
-        <%= link_to "Забыли пароль?", recover_password_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;" %>
+        <%= link_to "Забыли пароль?", recover_password_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;", :id => "forget_pass" %>
       </span>
     <% end %>
   </div>

@@ -3,7 +3,7 @@ class PagesController < HighVoltage::PagesController
 
   #before_filter :authenticate
   #layout :layout_for_page
-  before_filter :authenticate_user!, :except => [:home, :shops, :index, :show]
+  before_filter :authenticate_admin!, :except => [:home, :shops, :index, :show]
   
   def show
     @cart = current_cart

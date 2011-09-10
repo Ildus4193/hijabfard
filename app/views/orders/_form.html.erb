@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, "Имя" %><br />
-    <%= f.text_field :name, :size => 40 %>
+    <%= f.label :name, "Имя", :class => "order_new" %>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :address, "Адрес" %><br />
-    <%= f.text_area :address, :rows => 3, :cols => 40 %>
+    <%= f.label :address, "Адрес", :class => "order_new" %>
+    <%= f.text_area :address, :rows => 3, :cols => 84 %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email, :size => 40 %>
+    <%= f.label :email, :class => "order_new"%>
+    <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :phone, "Телефон" %><br />
+    <%= f.label :phone, "Телефон", :class => "order_new" %>
     <%= f.text_field :phone %>
   </div>
   <div class="actions">
-    <%= f.submit 'Купить'%>
+    <%= f.submit 'Купить', :style => "width: 80px" %>
   </div>
 <% end %>

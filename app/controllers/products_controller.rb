@@ -1,6 +1,6 @@
 # coding: utf-8
 class ProductsController < ApplicationController
-  before_filter :authenticate_user!, :except => :show 
+  before_filter :authenticate_admin!, :except => :show 
   # GET /products
   # GET /products.xml
   def index

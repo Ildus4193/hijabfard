@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:new, :create]
-  load_and_authorize_resource
+  before_filter :authenticate_admin!, :except => [:new, :create]
   # GET /orders
   # GET /orders.xml
   def index
@@ -29,7 +28,7 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_items.empty?
-      redirect_to store_path(:category => 'showcase'), :method => :post,  :notice => "Your cart is empty"
+      redirect_to root_path, :method => :post,  :notice => "Your cart is empty"
       return
     end
 
@@ -59,7 +58,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
 
-        format.html { redirect_to(store_path(:category => 'showcase'), :method => :post, :notice =>
+        format.html { redirect_to(root_path, :method => :post, :notice =>
           'Thank you for your order!') }
         format.xml  { render :xml => @order, :status => :created,
           :location => @order }
