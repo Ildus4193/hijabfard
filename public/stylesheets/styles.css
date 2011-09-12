@@ -63,6 +63,7 @@ body {
     margin: 0 auto;
     position: relative;
     background: url(/images/img/header_top_bg.png) no-repeat;
+    top: -8px;
 }
 #user_new {
     width: 500px;
@@ -78,7 +79,7 @@ body {
     vertical-align: top;
     width: 47px;
 }
-#search {
+#search_div {
     position: absolute;
     width: 420px;
     top: 70px;
@@ -86,7 +87,7 @@ body {
     width: 360px;
 }
 /* search */
-#searchfield {
+#search {
     position: absolute;
     width: 363px;
     height: 43px;
@@ -345,7 +346,7 @@ li#contacts a:hover, li#contacts a:active{
     top: 20px;
     width: 797px;
     background: url(/images/img/section_right.png) repeat-y right;
-    min-height: 1010px;
+    min-height: 1210px;
     left: 217px;
 
 }
@@ -438,7 +439,18 @@ li#contacts a:hover, li#contacts a:active{
 #sidebar ul li a:active {
     color: #ffffff;
 }
+#products {
+    position: relative;	
+    margin: 0 auto 20px;
+    top: 10px;
+    width: 750px;
+    /*max-height: 815px;*/
+    overflow: hidden;
+    padding: 10px 20px 0;
+    /*height: 590px;*/
 
+
+}
 #content {
     position: relative;	
     margin: 0 auto 20px;
@@ -641,6 +653,10 @@ color: #993399;
     border: 3px solid #d0d0d0;
 
 }
+.group_gallery p {
+    font: 16px 'Myriad Pro', Verdana, Geneva, sans-serif; 
+    color: #993399;
+}
 
 #news {
     position: relative;
@@ -695,7 +711,7 @@ color: #993399;
 }
 /* rassilka */
 #rassilka {
-    margin-top: 0px;
+    margin-top: 10px;
     margin-left: 25px;
 }
 #rassilka label {
@@ -816,6 +832,21 @@ fieldset {
 #new_order input {
     margin-bottom: 10px;
     width: 85%;
+}
+
+#orders_table td {
+    font: 16px  "Myriad Pro", Verdana, Geneva, sans-serif;
+    color: #663366;
+}
+#orders_table th {
+    font: 18px  "Myriad Pro", Verdana, Geneva, sans-serif;
+    color: #663366;
+}
+
+#orders_table td a {
+    font: 16px  "Myriad Pro", Verdana, Geneva, sans-serif;
+    color: #663366;
+    text-decoration: underline;
 }
 
 .error, .alert, .notice, .success, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}

@@ -1,9 +1,9 @@
 <% i=1 %> 
-<div class="group_gallery" style=" height: 450px;">
+<div class="group_gallery" style=" height: 480px;">
 <div style="vertical-align: bottom;position:relative; height: 412px; ">
 		<%= link_to (image_tag(product.avatar.url(:thumb), :class => "round")), product %>
 </div>
-  <div style=" height: 35px;"> 
+  <div style=" height: 35px; width: 165px;"> 
     <p><%= product.title %></p>
     <p><%= product.price %>
       <% if admin_signed_in? %>

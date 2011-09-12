@@ -1,5 +1,4 @@
 <%= form_for(@page, :url => page_path(:id => @page.title), :html => { :method => :put }) do |f| %>
 <p><%= f.cktext_area :description, :toolbar=>'Full', :width=>'740px', :height=>'400px' %>
-<p><%= f.submit "Update" %></p>
+<p style="margin-top: 10px;"><%= f.submit "Сохранить" %></p>
 <% end %>
-<%= link_to "Назад", :back %>

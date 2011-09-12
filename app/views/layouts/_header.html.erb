@@ -1,7 +1,7 @@
 <div id="header">
   <div id="header_top">
     <img style=" position: relative; top: 15px; left: 20px;" <%= image_tag("img/phone_pic.png", :alt => "Phone") %>
-    <span style=" position: relative; top: 13px; left: 25px; font: 18px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #fff;">8 917-22-56-187</span>
+    <span style=" position: relative; top: 13px; left: 25px; font: 18px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #fff;">8 925-736-34-36</span>
            
     <% if user_signed_in? %>
     <span style=" position: relative; top: 10px; left: 715px; ">
@@ -36,16 +36,19 @@
       $('#user_new').hide();
       });
     </script>
-    <span style=" position: relative; top: 10px; left: 505px; ">
+    <span style=" position: relative; top: 10px; left: 465px; ">
+        <%= link_to 'Продукты', products_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"    %>
+    </span>
+    <span style=" position: relative; top: 10px; left: 470px; ">
         <%= link_to 'Покупатели', orders_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"    %>
     </span>
-    <span style=" position: relative; top: 10px; left: 510px; ">
+    <span style=" position: relative; top: 10px; left: 475px; ">
         <%= link_to 'Пользователи', orders_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"   %>
     </span>
-    <span style=" position: relative; top: 10px; left: 515px; ">
+    <span style=" position: relative; top: 10px; left: 480px; ">
       <%= link_to "Мой профиль", edit_admin_registration_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"  %>
       </span>
-      <span style=" position: relative; top: 10px; left: 520px; ">
+      <span style=" position: relative; top: 10px; left: 485px; ">
       <%= link_to "Выйти", destroy_admin_session_path, :method => :delete, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"  %>
       </span>
     <% end %>
@@ -56,10 +59,12 @@
     <% end %>
   </div>
     <%= image_tag("img/logog_header.png", :alt => "Logo", :style => " position: relative; top: 20px; left: 20px;")  %>
-    <div id="search">
+    <div id="search_div">
     <p style=" margin-left: 3px; font: 16px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #8e3085;"><b>Я ищу.</b></p>
-    <input id="searchfield" type="text" onblur="clearText(this)" onfocus="clearText(this)" value="" name="tSer" />
-    <input id="search_btn_header" type="submit" value="" name="cSer"  />
+    <% form_tag products_path, :method => :get, :remote => true do %>
+       <%= text_field_tag :search, params[:search] %>
+       <%= submit_tag "", :name => nil, :id => "search_btn_header"  %>
+    <% end %>
     </div>
     <div id="cart" style=" position: absolute; float: right; top: 70px; right: 45px;">
     <%= image_tag("img/cart.png", :alt => "Cart") %>
@@ -67,3 +72,4 @@
     </div>
 </div>
 
+ 
