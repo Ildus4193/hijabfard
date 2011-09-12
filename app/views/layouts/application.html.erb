@@ -19,9 +19,9 @@
             <li id="glav_item"><%=  link_to "Главная", root_path %></li>
             <li id="shop_item"><%=  link_to_pages('Магазины', "shops") %></li>
             <li id="how_to"><%= link_to_pages(raw("Как сделать <br />заказ"), "how_to") %></li>
-            <li id="dostavka"><%=  link_to_pages('Доставка', "shops") %></li>
-            <li id="for_ppartners"><%=  link_to_pages('Партнерам', "shops") %></li>
-            <li id="contacts"><%=  link_to_pages('Контакты', "shops") %></li>
+            <li id="dostavka"><%=  link_to_pages('Доставка', "dostavka") %></li>
+            <li id="for_ppartners"><%=  link_to_pages('Партнерам', "partneram") %></li>
+            <li id="contacts"><%=  link_to_pages('Контакты', "contacts") %></li>
         </ul>
     </div>
       <div style="position: relative;">
@@ -33,13 +33,21 @@
         </p>
         <ul>
           <li><%=  link_to "Платья", category_path(:id => 1) %></li>
-          <li><a href="#">Сарафаны</a></li>
-          <li><a href="#">Туники</a></li>
-          <li><a href="#">Юбки</a></li>
-          <li><a href="#">Одежда для дома</a></li>
-          <li><a href="#">Аксессуары</a></li>
-          <li><a href="#">Распродажа</a></li>
-          <li><a href="#">Сувенирная продукция</a></li>
+          <li><%=  link_to "Сарафаны", category_path(:id => 2) %></li>
+          <li><%=  link_to "Туники", category_path(:id => 3) %></li>
+          <li><%=  link_to "Юбки", category_path(:id => 4) %></li>
+          <li><%=  link_to "Сарафаны", category_path(:id => 5) %></li>
+          <li><%=  link_to "Одежда для дома", category_path(:id => 6) %></li>
+          <li><%=  link_to "Изделия из химары", category_path(:id => 7) %></li>
+          <li><%=  link_to "Амирки", category_path(:id => 8) %></li>
+          <li><%=  link_to "Палантины", category_path(:id => 9) %></li>
+          <li><%=  link_to "Водолазки кардиганы", category_path(:id => 10) %></li>
+          <li><%=  link_to "Платья для беременных и кормящих мам", category_path(:id => 11) %></li>
+          <li><%=  link_to "Одежда для подростков", category_path(:id => 12) %></li>
+          <li><%=  link_to "Аксессуары", category_path(:id => 13) %></li>
+          <li><%=  link_to "Распродажа", category_path(:id => 14) %></li>
+          <li><%=  link_to "Мужская одежда", category_path(:id => 15) %></li>
+          
         </ul>
       </div>
       <div id="sidebar_rassilka">
@@ -70,17 +78,17 @@
         <div id="sidebar_bottom_menu1">
           <%= image_tag "img/question.png" %>
         </div>
-        <div id="sidebar_menu_text" style="width: 170px;"><a href="#">Часто задаваемые вопросы</a>
+        <div id="sidebar_menu_text" style="width: 170px;"><%=  link_to_pages('Часто задаваемые вопросы', "FAQ") %>
         </div>
         <div id="sidebar_bottom_menu2">
           <%= image_tag "img/akcii.png" %>
         </div>
-        <div id="sidebar_menu_text" style="width: 40px;"><a href="#">Акции</a>
+        <div id="sidebar_menu_text" style="width: 40px;"><%=  link_to_pages('Акции', "akcii") %>
         </div>
         <div id="sidebar_bottom_menu3">
           <%= image_tag "img/sertifikat.png" %>
         </div>
-        <div id="sidebar_menu_text" style="width: 165px;"><a href="#">Подарочные сертификаты</a>
+        <div id="sidebar_menu_text" style="width: 165px;"><%=  link_to_pages('Подарочные сертификаты', "present_certifikat") %>
         </div>
       </div>
     </div>
@@ -123,6 +131,5 @@
     </div>
 
     <%= render 'layouts/footer' %>
-    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

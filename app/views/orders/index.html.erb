@@ -1,7 +1,7 @@
 <% title "Покупатели" %>
 <h1>Покупатели</h1>
 
-<table>
+<table id="orders_table">
   <tr>
     <th>Имя</th>
     <th>Адрес</th>
@@ -18,9 +18,8 @@
     <td><%= order.address %></td>
     <td><%= order.email %></td>
     <td><%= order.phone %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Показать', order %></td>
+    <td><%= link_to 'Удалить', order, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
