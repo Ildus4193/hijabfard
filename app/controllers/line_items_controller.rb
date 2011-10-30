@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:create, :update]
- 
+  before_filter :authenticate_admin!, :except => [:create, :update]
+
   # GET /line_items
   # GET /line_items.xml
   def index
@@ -44,7 +44,7 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id)
+    @line_item = @cart.add_product(product.id, params[:product][:quantity])
 
     respond_to do |format|
       if @line_item.save
@@ -64,7 +64,7 @@ class LineItemsController < ApplicationController
      @cart = current_cart
      quantity = params[:quantity].to_i;
     #@line_item = LineItem.find(params[:id])
-    if current_cart 
+    if current_cart
       @line_item = LineItem.where(:id => params[:id]).first
        unless quantity <= 0
         @line_item.quantity = quantity

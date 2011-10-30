@@ -1,6 +1,6 @@
 # coding: utf-8
 class Notifier < ActionMailer::Base
-  default :from => "nozik666@mail.ru"
+  default :from => "ildus523@mail.ru"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -9,8 +9,8 @@ class Notifier < ActionMailer::Base
   #
   def order_received(order)
     @order = order
-
-    mail :to => order.email, :subject => 'Спасибо за покупку!!!'
+    @url = "http://hijab-fard.ru"
+    mail(:to => order.email, :subject => 'Thank you!!!')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

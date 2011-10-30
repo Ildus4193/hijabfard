@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Спасибо, <%= @order.name %>,  за Ваш выбор!</h1>
+
+    <p>Номер заказа: <%= @order.id %></p>
+
+<p>Ваш заказ принят на обработку.</p>
+<p>Заказанные продукты:</p>
+<%= render @order.line_items %>
+
+<p>Итого <%= @order.total_price %> руб.</p>
+
+<p>Телефон:  <%= @order.phone %></p>
+<p>Адрес доставки заказа:  <%= @order.address %></p>
+
+
+<h3>Мы свяжемся с вами в ближайшее время.</h3>
+
+</body>
+</html>
