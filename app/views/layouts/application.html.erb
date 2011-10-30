@@ -5,14 +5,15 @@
     <%= csrf_meta_tag %>
     <%= render 'layouts/stylesheets' %>
     <%= javascript_include_tag "jquery-1.4.4.min.js", "jquery.rails.js", "jquery.color.js" %>
+    <%= javascript_include_tag "autocomplete-rails.js" %>
     <%#= javascript_include_tag :defaults %>
     <%#= include_tiny_mce_if_needed %>
     <%= javascript_include_tag :ckeditor %>
-    
+
   </head>
   <body>
     <%= render 'layouts/header' %>
- 
+
     <div id="section">
 	<div id="nav">
     	<ul>
@@ -47,7 +48,7 @@
           <li><%=  link_to "Аксессуары", category_path(:id => 13) %></li>
           <li><%=  link_to "Распродажа", category_path(:id => 14) %></li>
           <li><%=  link_to "Мужская одежда", category_path(:id => 15) %></li>
-          
+
         </ul>
       </div>
       <div id="sidebar_rassilka">

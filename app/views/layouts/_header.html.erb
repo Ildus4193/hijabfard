@@ -2,7 +2,7 @@
   <div id="header_top">
     <img style=" position: relative; top: 15px; left: 20px;" <%= image_tag("img/phone_pic.png", :alt => "Phone") %>
     <span style=" position: relative; top: 13px; left: 25px; font: 18px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #fff;">8 925-736-34-36</span>
-           
+
     <% if user_signed_in? %>
     <span style=" position: relative; top: 10px; left: 715px; ">
       <%= link_to "Мой профиль", edit_user_registration_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"  %>
@@ -11,24 +11,24 @@
       <%= link_to "Выйти", destroy_session_user_path, :method => :delete, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"  %>
       </span>
     <% else %>
-    
+
       <%= form_tag(new_user_session_path, :id => "user_new") do %>
-        <span style=" position: relative; top: 10px; left: 240px; ">    
-          <%= link_to "Регестрация", sign_up_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc; text-decoration:underline;" %>
+        <span style=" position: relative; top: 10px; left: 240px; ">
+          <%= link_to "Регистрация", sign_up_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc; text-decoration:underline;" %>
         </span>
         <span style=" position: relative; top: 10px; left: 250px; font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;">
           <%= label(:login, "Логин") %>
-          <%= text_field_tag 'user[login]', '', :size => 12 %>      
+          <%= text_field_tag 'user[login]', '', :size => 12 %>
         </span>
         <span style=" position: relative; top: 10px; left: 255px; font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;">
           <%= label(:password, "Пароль") %>
           <%= password_field_tag 'user[password]', '', :size => 12 %>
-        </span> 
-        <span style=" position: relative; top: 7px; left: 255px; ">  
+        </span>
+        <span style=" position: relative; top: 7px; left: 255px; ">
           <%= submit_tag "", :id => "sign_in_submit" %>
         </span>
       <% end %>
-    
+
     <% if admin_signed_in?  %>
     <script type="text/javascript">
       $(document).ready(function(init){
@@ -52,8 +52,8 @@
       <%= link_to "Выйти", destroy_admin_session_path, :method => :delete, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"  %>
       </span>
     <% end %>
-    
-      <span style=" position: relative; top: 10px; left: 750px; ">
+
+      <span style=" position: relative; top: 10px; left: 700px; ">
         <%= link_to "Забыли пароль?", recover_password_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;", :id => "forget_pass" %>
       </span>
     <% end %>
@@ -72,4 +72,4 @@
     </div>
 </div>
 
- 
+

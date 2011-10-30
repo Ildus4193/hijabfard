@@ -1,11 +1,11 @@
-<% i=1 %> 
+<% i=1 %>
 <div class="group_gallery" style=" height: 520px;">
   <div style="vertical-align: bottom;position:relative; height: 412px; ">
     <%= image_tag(line_item.product.avatar.url(:thumb), :class => "round")%>
   </div>
-  <div style=" height: 35px; width: 160px"> 
+  <div style=" height: 35px; width: 160px">
     <h2><%= line_item.product.title %></h2>
-    <h3>Размер <%= line_item.product.size %></h3> 
+    <h3>Размер <%= line_item.size %></h3>
     <table style="height: 10px;"> <tr>
         <% if !admin_signed_in? %>
         <td style="width: 15px;">
@@ -29,4 +29,4 @@
     <% i=0 %>
   <% end %>
   <% i+= 1 %>
-</div>			
+</div>

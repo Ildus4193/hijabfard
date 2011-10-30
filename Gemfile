@@ -12,6 +12,8 @@ gem 'high_voltage', '0.9.3'
 gem 'jquery-rails'
 gem 'ckeditor', '3.4.2.pre'
 gem 'will_paginate', '~> 3.0'
+gem 'jquery-rails'
+gem 'rails3-jquery-autocomplete'
 
 # Use unicorn as the web server
 # gem 'unicorn'
