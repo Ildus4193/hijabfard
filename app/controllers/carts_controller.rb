@@ -15,6 +15,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.xml
   def show
+   Rails.logger.info "************carts show params #{params.inspect}"
     begin
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound

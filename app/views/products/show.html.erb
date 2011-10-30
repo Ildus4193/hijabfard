@@ -6,21 +6,34 @@
     <h2><%= @product.title %></h2>
     <p>Стоимость <%= @product.price %></p>
     <p>Размеры:</p>
-    <ul>
-      <li>42</li>
+    <ul> <li>42</li>
       <li>44</li>
       <li>46</li>
       <li>48</li>
       <li>50</li>
     </ul>
-    <p>Количество  <%= select(:product, :quantity, [['1',1],['2',2],['3',3],['4',4]]) %></p>
-    <p>Размер <%= select_tag(:size, options_for_select([['42',1],['44',2],['46',3],['48',4],['50',5]], @product.size)) %></p>
-    <%= button_to 'Добавить в корзину' , line_items_path(:product_id => @product)  %>
+    <%= form_for @product, :url => { :controller => "line_items", :action => "create" }, :html => {:class => "button_to", :method => "post"} do |f| %>
+    <p>Количество  <%= f.select( :quantity, [['1',1],['2',2],['3',3],['4',4]]) %></p>
+    <%= hidden_field(:product, :quantity) %>
+    <%= hidden_field_tag(:product_id, @product.id) %>
+    <p>Размер <%= f.select(:size, options_for_select([['42',42],['44',44],['46',46],['48',48],['50',50]], @product.size)) %></p>
+    <%= hidden_field(:product, :size) %>
+    <%= button_to 'Добавить в корзину' %>
+    <% end %>
   </div>
 </div>
 
 <% if admin_signed_in? %>
 <%= link_to 'Редактировать', edit_product_path(@product) %> |
 <%= link_to 'Назад', products_path %>
-  
+
 <% end %>
+
+<script type="text/javascript">
+  $('select#product_quantity').change(function() {
+      $('input#product_quantity').attr('value',$('select#product_quantity').val());
+      });
+  $('select#product_size').change(function() {
+    $('input#product_size').attr('value',$('select#product_size').val())
+    });
+    </script>

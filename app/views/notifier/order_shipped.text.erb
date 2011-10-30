@@ -1,0 +1,11 @@
+<h3>Доставка заказа</h3>
+Спасибо Вам, <%= @order.name %>, за покупку!!!
+<p>
+  Выполнен ваш заказ:
+</p>
+
+<table>
+  <tr><th colspan="2">Qty</th><th>Описание</th></tr>
+<%= render @order.line_items %>
+</table>
+
