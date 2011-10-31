@@ -103,18 +103,7 @@
         </div>
         <div id="news">
         	<p style="font: 20px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #663366;">Новости</p>
-            <div id="news_blocks">
-            	<%= image_tag("img/news_pic.png", :class => "leftimg") %>
-                <p style="color: #999; margin-bottom: 4px;">27.06.2011</p>
-                <p>
-                Впервые, известная венгерская фирма по производству обычных купальников выпустила мусульманские. Для производства этих купальников используются специальные нити и купальная ткан</p>
-            </div>
-            <div id="news_blocks">
-            	<%= image_tag("img/news_pic.png", :class => "leftimg") %>
-                <p style="color: #999; margin-bottom: 4px;">27.06.2011</p>
-                <p>
-                Впервые, известная венгерская фирма по производству обычных купальников выпустила мусульманские. Для производства этих купальников используются специальные нити и купальная ткан</p>
-            </div>
+                <%= render :partial => 'news/news_show', :collection => @news_show %>
                 <% if params[:id] == 'home' %>
             <div id="info_b">
             	<p>Мусульманская одежда HIJAB FARD</p>

@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   before_filter :cart_current
+  before_filter :news_show
   protect_from_forgery
+
+  def news_show
+    @news_show = News.order("created_at desc").limit(2)
+  end
   private
 
     def current_cart
@@ -10,7 +15,7 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = cart.id
       cart
     end
-    
+
     def cart_current
       @cart = current_cart
     end
