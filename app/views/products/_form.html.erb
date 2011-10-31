@@ -1,43 +1,40 @@
 <%= form_for(@product, :html => { :multipart => true }) do |f| %>
   <% if @product.errors.any? %>
-    <div id="error_explanation"> 
+    <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %>
-      prohibited this product from being saved:</h2> 
- 
-      <ul> 
+      prohibited this product from being saved:</h2>
+
+      <ul>
       <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li> 
+        <li><%= msg %></li>
       <% end %>
-      </ul> 
-    </div> 
+      </ul>
+    </div>
   <% end %>
- 
-  <div class="field"> 
-    <%= f.label :title, "Название" %><br /> 
-    <%= f.text_field :title %>
-  </div> 
-  <div class="field"> 
-    <%= f.label :description, "Описание" %><br /> 
-<!-- START_HIGHLIGHT --> 
-    <%= f.text_area :description, :rows => 6 %>
-<!-- END_HIGHLIGHT --> 
-  </div>
-  <div class="field"> 
-    <%= f.label :price, "Цена" %><br /> 
-    <%= f.text_field :price %>
-  </div> 
-  <div class="field"> 
-    <%= f.label :size, "Размер" %><br /> 
-    <%= f.text_field :size %>
-  </div>
-  <div class="field"> 
-    <%= f.label :quantity, "Колчество" %><br /> 
-    <%= f.text_field :quantity %>
-  </div> 
+
   <div class="field">
-    <%= f.label :avatar, "Изображение" %><br />  
+    <%= f.label :title, "Название" %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description, "Описание" %><br />
+<!-- START_HIGHLIGHT -->
+    <%= f.text_area :description, :rows => 6 %>
+<!-- END_HIGHLIGHT -->
+  </div>
+  <div class="field">
+    <%= f.label :price, "Цена" %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id, "Каталог" %><br />
+    <%= f.select(:category_id, options_from_collection_for_select(Category.all, :id, :name))  %>
+    <%= f.hidden_field(:category_id) %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar, "Изображение" %><br />
     <%= f.file_field :avatar %>
-  </div> 
+  </div>
   <div class="field">
     <%#= f.label "Категория" %><br />
     <%# for category in Category.all %>
@@ -45,12 +42,17 @@
     <%#= label_tag dom_id(category), category.name, :class => "check_box_label" %>
     <%# end %>
   </div>
-  
-  
-  
 
-  
-  <div class="actions"> 
+
+
+
+
+  <div class="actions">
     <%= f.submit "Создать" %>
-  </div> 
+  </div>
 <% end %>
+<script type="text/javascript">
+  $('select#product_category_id').change(function() {
+      $('input#product_category_id').attr('value',$('select#product_category_id').val());
+      });
+</script>

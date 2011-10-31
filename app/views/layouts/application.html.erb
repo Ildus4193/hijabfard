@@ -5,14 +5,15 @@
     <%= csrf_meta_tag %>
     <%= render 'layouts/stylesheets' %>
     <%= javascript_include_tag "jquery-1.4.4.min.js", "jquery.rails.js", "jquery.color.js" %>
+    <%= javascript_include_tag "autocomplete-rails.js" %>
     <%#= javascript_include_tag :defaults %>
     <%#= include_tiny_mce_if_needed %>
     <%= javascript_include_tag :ckeditor %>
-    
+
   </head>
   <body>
     <%= render 'layouts/header' %>
- 
+
     <div id="section">
 	<div id="nav">
     	<ul>
@@ -47,7 +48,7 @@
           <li><%=  link_to "Аксессуары", category_path(:id => 13) %></li>
           <li><%=  link_to "Распродажа", category_path(:id => 14) %></li>
           <li><%=  link_to "Мужская одежда", category_path(:id => 15) %></li>
-          
+
         </ul>
       </div>
       <div id="sidebar_rassilka">
@@ -102,18 +103,7 @@
         </div>
         <div id="news">
         	<p style="font: 20px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #663366;">Новости</p>
-            <div id="news_blocks">
-            	<%= image_tag("img/news_pic.png", :class => "leftimg") %>
-                <p style="color: #999; margin-bottom: 4px;">27.06.2011</p>
-                <p>
-                Впервые, известная венгерская фирма по производству обычных купальников выпустила мусульманские. Для производства этих купальников используются специальные нити и купальная ткан</p>
-            </div>
-            <div id="news_blocks">
-            	<%= image_tag("img/news_pic.png", :class => "leftimg") %>
-                <p style="color: #999; margin-bottom: 4px;">27.06.2011</p>
-                <p>
-                Впервые, известная венгерская фирма по производству обычных купальников выпустила мусульманские. Для производства этих купальников используются специальные нити и купальная ткан</p>
-            </div>
+                <%= render :partial => 'news/news_show', :collection => @news_show %>
                 <% if params[:id] == 'home' %>
             <div id="info_b">
             	<p>Мусульманская одежда HIJAB FARD</p>
