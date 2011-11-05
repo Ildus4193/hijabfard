@@ -7,19 +7,15 @@
     <h2><%= line_item.product.title %></h2>
     <h3>Размер <%= line_item.size %></h3>
     <table style="height: 10px;"> <tr>
-        <% if !admin_signed_in? %>
         <td style="width: 15px;">
           <%= button_to "-", line_item_path(  :quantity => (line_item.quantity - 1), :id => line_item), :remote =>true, :method => :put  %>
         </td>
-        <% end %>
         <td id="quantity_item" style="width: 15px; text-align: center;">
           <%= line_item.quantity %>
         </td>
-         <% if !admin_signed_in? %>
         <td style="width: 15px;">
           <%= button_to "+", line_item_path( :quantity => (line_item.quantity + 1), :id => line_item), :remote =>true, :method => :put %>
         </td>
-        <% end %>
         <td style="font-size: 12pt; font-family: 'Myriad Pro', Verdana, Geneva, sans-serif;">
           &times; <%= line_item.product.price %> руб.</td></tr>
     </table>

@@ -726,7 +726,7 @@ color: #993399;
     font: 12px  "Myriad Pro", Verdana, Geneva, sans-serif;
     color: #663366;
 }
-#user_rassilka {
+#distribution_name {
     position: relative;
     width: 127px;
     height: 27px;
@@ -736,6 +736,18 @@ color: #993399;
     vertical-align: top;
     text-indent: 8px;
 }
+
+#distribution_email {
+    position: relative;
+    width: 127px;
+    height: 27px;
+    background: url(/images/img/rassika_input_bg.png) no-repeat 100% 100%;
+    border: 0px;
+    margin-left: -3px;
+    vertical-align: top;
+    text-indent: 8px;
+}
+
 
 #search_btn_header {
     position: relative;
@@ -749,7 +761,7 @@ color: #993399;
     top: 3px;
 }
 #rassilka_capch {
-    margin-top: 10px;
+    margin-top: -31px;
     margin-left: 25px;
 }
 #rassilka_capch label {
@@ -757,7 +769,7 @@ color: #993399;
     color: #663366;
 }
 
-#capchafield {
+#distribution_captcha {
     position: relative;
     width: 108px;
     height: 27px;
@@ -767,7 +779,7 @@ color: #993399;
     vertical-align: top;
     text-indent: 8px;
 }
-#capcha_btn {
+#distribution_submit {
     position: absolute;
     float: right;
     cursor: pointer;
