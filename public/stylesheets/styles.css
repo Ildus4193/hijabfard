@@ -48,7 +48,7 @@ html, body
 body {
     vertical-align: middle;
     background-color:#999;
-    background: url(/images/img/body_bg.jpg);   
+    background: url(/images/img/body_bg.jpg);
 
 }
 #header {
@@ -129,7 +129,7 @@ body {
     list-style: none;
     width: 100%;
 }
-ul {  
+ul {
     margin-top:0px;
     list-style: none;
     padding: 0;
@@ -137,7 +137,7 @@ ul {
 
     width: 100%;
 
-}  
+}
 
 ul.mainlevel a span {
     display:none;
@@ -162,7 +162,7 @@ ul.mainlevel a span {
             padding-left: 70px;*/
     font-weight: bold;
     color: #993399;
-    font: 14px "Myriad Pro", Verdana, Geneva, sans-serif; 
+    font: 14px "Myriad Pro", Verdana, Geneva, sans-serif;
 }
 
 #nav ul li a:active {
@@ -187,7 +187,7 @@ li#glav_item a{
     margin-left: 70px;
 }
 
-li#glav_item a:hover, li#glav_item a:active{	
+li#glav_item a:hover, li#glav_item a:active{
     text-decoration: none;
     color:#993399;
 }
@@ -206,7 +206,7 @@ li#shop_item a{
     margin-left: 70px;
 }
 
-li#shop_item a:hover, li#shop_item a:active{	
+li#shop_item a:hover, li#shop_item a:active{
     text-decoration: none;
     color:#993399;
 }
@@ -226,7 +226,7 @@ li#how_to a{
     margin-left: 65px;
 }
 
-li#how_to a:hover, li#how_to a:active{	
+li#how_to a:hover, li#how_to a:active{
     text-decoration: none;
     color:#993399;
 }
@@ -245,7 +245,7 @@ li#dostavka a{
     margin-left: 72px;
 }
 
-li#dostavka a:hover, li#dostavka a:active{	
+li#dostavka a:hover, li#dostavka a:active{
     text-decoration: none;
     color:#993399;
 }
@@ -264,7 +264,7 @@ li#for_ppartners a{
     margin-left: 70px;
 }
 
-li#for_ppartners a:hover, li#for_ppartners a:active{	
+li#for_ppartners a:hover, li#for_ppartners a:active{
     text-decoration: none;
     color:#993399;
 }
@@ -283,7 +283,7 @@ li#contacts a{
     margin-left: 55px;
 }
 
-li#contacts a:hover, li#contacts a:active{	
+li#contacts a:hover, li#contacts a:active{
     text-decoration: none;
     color:#993399;
 }
@@ -310,7 +310,7 @@ li#contacts a:hover, li#contacts a:active{
 }
 #left-col {
     width:216px;
-    
+
     height: 100%;
     position: absolute;
     top: 20px;
@@ -346,7 +346,7 @@ li#contacts a:hover, li#contacts a:active{
     top: 20px;
     width: 797px;
     background: url(/images/img/section_right.png) repeat-y right;
-    min-height: 1210px;
+    min-height: 1275px;
     left: 217px;
 
 }
@@ -364,7 +364,7 @@ li#contacts a:hover, li#contacts a:active{
     font-family:  "Myriad Pro", Verdana, Geneva, sans-serif;
 }
 
-#sidebar ul li {	
+#sidebar ul li {
     margin: 12px 20px;
     list-style-image: url(/images/img/sidebar_li.png);
     text-indent: -5px;
@@ -411,7 +411,7 @@ li#contacts a:hover, li#contacts a:active{
     font-family:  "Myriad Pro", Verdana, Geneva, sans-serif;
 }
 
-#sidebar_content_left ul li {	
+#sidebar_content_left ul li {
     margin: 12px 18px;
     list-style: none;
 
@@ -440,7 +440,7 @@ li#contacts a:hover, li#contacts a:active{
     color: #ffffff;
 }
 #products {
-    position: relative;	
+    position: relative;
     margin: 0 auto 20px;
     top: 10px;
     width: 750px;
@@ -452,7 +452,7 @@ li#contacts a:hover, li#contacts a:active{
 
 }
 #content {
-    position: relative;	
+    position: relative;
     margin: 0 auto 20px;
     top: 10px;
     width: 750px;
@@ -523,7 +523,7 @@ li#contacts a:hover, li#contacts a:active{
     background:url(/images/img/select.png);
     color:#666666;
     font-size:14px;
-    font-family: "Myriad Pro", Verdana, Geneva, sans-serif; 
+    font-family: "Myriad Pro", Verdana, Geneva, sans-serif;
     line-height:27px;
     zoom:1;
     position:relative;
@@ -545,7 +545,7 @@ li#contacts a:hover, li#contacts a:active{
     opacity:0.85;
     filter:alpha(opacity=85);
     font-size:14px;
-    font-family: "Myriad Pro", Verdana, Geneva, sans-serif; 
+    font-family: "Myriad Pro", Verdana, Geneva, sans-serif;
     padding:0 6px;
     line-height:normal;
     outline:none;
@@ -605,7 +605,7 @@ li#contacts a:hover, li#contacts a:active{
     left: 30px;
 }
 #ftr_table a {
-    font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; 
+    font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif;
     color: #ffcc00;
 }
 #footer_table {
@@ -629,7 +629,7 @@ color: #993399;
 }
 
 #show_products ul {
-    font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; 
+    font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif;
     list-style:disc inside;
 }
 
@@ -654,7 +654,7 @@ color: #993399;
 
 }
 .group_gallery p {
-    font: 16px 'Myriad Pro', Verdana, Geneva, sans-serif; 
+    font: 16px 'Myriad Pro', Verdana, Geneva, sans-serif;
     color: #993399;
 }
 
@@ -679,18 +679,26 @@ color: #993399;
     color: #333333;
 }
 #info_b {
-    position: relative;
     width: 750px;
     height: 250px;
     top: -5px;
 }
-#info_b p { 
+#info_b p {
     margin-bottom: 5px;
 }
 .leftimg {
     float:left; /* Выравнивание по левому краю */
     margin: 4px 7px 7px 0; /* Отступы вокруг картинки */
 }
+
+#news_content {
+  margin-top: 15px;
+}
+#news_content img {
+  float: left;
+  margin: 4px 20px 7px 0;
+}
+
 .galery_news {
     position: relative;
     margin-top: 20px;
@@ -818,7 +826,7 @@ color: #993399;
 
 
 
-fieldset { 
+fieldset {
     border-color: #993399;
 }
 

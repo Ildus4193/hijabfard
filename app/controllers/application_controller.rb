@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include SimpleCaptcha::ControllerHelpers
   before_filter :cart_current
   before_filter :news_show
   protect_from_forgery

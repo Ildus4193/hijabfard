@@ -1,20 +1,12 @@
 <p id="notice"><%= notice %></p>
-
+<h2><%= @news.title %></h2>
+<div id="news_content">
+  <%= image_tag(@news.avatar.url) %>
 <p>
-  <b>Title:</b>
-  <%= @news.title %>
-</p>
-
-<p>
-  <b>Short description:</b>
-  <%= @news.short_description %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%= @news.description %>
 </p>
-
-
+</div>
+<% if admin_signed_in?  %>
 <%= link_to 'Edit', edit_news_path(@news) %> |
 <%= link_to 'Back', news_index_path %>
+<% end %>

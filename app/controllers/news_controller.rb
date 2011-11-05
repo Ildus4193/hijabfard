@@ -1,4 +1,6 @@
 class NewsController < ApplicationController
+  before_filter :authenticate_admin!, :except => [:show]
+
   # GET /news
   # GET /news.xml
   def index
