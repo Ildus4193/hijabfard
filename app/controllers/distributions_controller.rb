@@ -8,9 +8,10 @@ class DistributionsController < ApplicationController
     respond_to do |format|
       if @distributions.valid_with_captcha?
         @distributions.save
-        format.html { redirect_to(root_path, :notice => 'Рассылка отправлено.') }
+        DistributionMail.mail_distribution(@distributions).deliver
+        format.html { redirect_to(root_path, :notice => 'Ваш e-mail был удачно добавлен!') }
       else
-        format.html { redirect_to(root_path, :notice => 'Рассылка не отправлено.')  }
+        format.html { redirect_to(root_path, :notice => 'Вы ввели неверный числовой код! Повторите попытку.')  }
       end
     end
 
