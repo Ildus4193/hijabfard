@@ -15,6 +15,7 @@ gem 'ckeditor', '3.4.2.pre'
 gem 'will_paginate', '~> 3.0'
 gem 'jquery-rails'
 gem 'rails3-jquery-autocomplete'
+gem "galetahub-simple_captcha", :require => "simple_captcha"
 
 # Use unicorn as the web server
 # gem 'unicorn'

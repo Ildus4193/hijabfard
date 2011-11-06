@@ -52,28 +52,7 @@
         </ul>
       </div>
       <div id="sidebar_rassilka">
-        <p style="margin-bottom: 10px; margin-left: 25px; color: #663366; font: 16px 'Myriad Pro' Verdana, Geneva, sans-serif;">
-          <%= image_tag   "img/sidebar.png" %>
-          Рассылка
-        </p>
-        <div id="rassilka">
-          <label for="user_name_rassilka">Ваше имя:</label><br />
-          <input id="user_rassilka" type="text" value="" size="20" name="user[name]" />
-        </div>
-        <div id="rassilka">
-          <label for="user_email_rassilka">Ваш e-mail:</label><br />
-          <input id="user_rassilka" type="text" value="" size="20" name="user[email]" />
-        </div>
-        <div id="rassilka">
-          <label for="capcha_rassilka">Секретный код:</label><br />
-          <%= image_tag "img/capch_bg.png" %><br />
-          <label style="color: #996699; text-decoration:underline;" for="capcha_rassilka">Не видно цифр</label>
-        </div>
-        <div id="rassilka_capch">
-          <label for="capcha_rassilka">Повторить:</label><br />
-          <input id="capchafield" type="text" onblur="clearText(this)" onfocus="clearText(this)" value="" name="capch" />
-          <input id="capcha_btn" type="submit" value="" name="capch_btn"  />
-        </div>
+        <%= render :partial => 'distributions/distributions_index' %>
       </div>
       <div id="sidebar_bottom">
         <div id="sidebar_bottom_menu1">

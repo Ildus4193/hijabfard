@@ -1,0 +1,21 @@
+<p style="margin-bottom: 10px; margin-left: 25px; color: #663366; font: 16px 'Myriad Pro' Verdana, Geneva, sans-serif;">
+  <%= image_tag   "img/sidebar.png" %>
+  Рассылка
+</p>
+<%= form_for @distributions = Distribution.new do |f| %>
+<div id="rassilka">
+  <%= f.label :name, "Ваше имя:" %><br />
+  <%= f.text_field :name %>
+</div>
+<div id="rassilka">
+  <%= f.label :email, "Ваш e-mail:" %><br />
+  <%= f.text_field :email %>
+</div>
+<div id="rassilka">
+  <label for="capcha_rassilka">Секретный код:</label><br />
+  <%= f.simple_captcha(:code_type => 'numeric') %>
+</div>
+<div id="rassilka_capch">
+  <%= f.submit :value => "" %>
+</div>
+<% end %>

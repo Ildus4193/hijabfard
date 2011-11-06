@@ -1,6 +1,7 @@
 Hijabfard::Application.routes.draw do
 
   resources :news
+  resources :distributions
 
   devise_for :admins
 

@@ -1,6 +1,6 @@
 <div id="news_blocks">
-  <%= image_tag(news_show.avatar.url(:thumb), :class => "leftimg") %>
-  <p style="color: #999; margin-bottom: 4px;"><%= news_show.created_at.strftime("%d.%m.%Y") %></p>
-  <p><b><%= news_show.title %></b>
-    <%= news_show.short_description %></p>
+  <%= link_to image_tag(news_show.avatar.url(:thumb), :class => "leftimg"), news_path(news_show.id)%>
+  <%= link_to news_show.created_at.strftime("%d.%m.%Y"), news_path(news_show.id), :style => "color: #999; margin-bottom: 4px;"%>
+  <p><%= link_to news_show.title, news_path(news_show.id), :style => "font-weight: bold;"%>
+  <%= news_show.short_description %></p>
 </div>
