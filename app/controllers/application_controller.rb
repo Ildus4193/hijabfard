@@ -2,10 +2,14 @@ class ApplicationController < ActionController::Base
   include SimpleCaptcha::ControllerHelpers
   before_filter :cart_current
   before_filter :news_show
+  before_filter :catalog_links
   protect_from_forgery
 
   def news_show
     @news_show = News.order("created_at desc").limit(2)
+  end
+  def catalog_links
+    @catalog_links = Category.all
   end
   private
 

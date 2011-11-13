@@ -1,0 +1,5 @@
+<h1>Категории</h1>
+<% @category.each do |f| %>
+  <p><%= f.name %>  <%= link_to "Редактировать", edit_category_path(f) %> | <%= link_to "Удалить", category_path(f), :method => "delete" %></p>
+<% end %>
+<%= link_to "Новая категория", new_category_path %>
