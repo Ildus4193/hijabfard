@@ -17,12 +17,18 @@
     <div id="section">
 	<div id="nav">
     	<ul>
-            <li id="glav_item"><%=  link_to "Главная", root_path %></li>
-            <li id="shop_item"><%=  link_to_pages('Магазины', "shops") %></li>
-            <li id="how_to"><%= link_to_pages(raw("Как сделать <br />заказ"), "how_to") %></li>
-            <li id="dostavka"><%=  link_to_pages('Доставка', "dostavka") %></li>
-            <li id="for_ppartners"><%=  link_to_pages('Партнерам', "partneram") %></li>
-            <li id="contacts"><%=  link_to_pages('Контакты', "contacts") %></li>
+          <li id="glav_item">
+            <% if admin_signed_in? %>
+            <%=  link_to_pages('Главная', "home") %>
+            <% else %>
+            <%=  link_to "Главная", root_path %>
+            <% end %>
+          </li>
+          <li id="shop_item"><%=  link_to_pages('Магазины', "shops") %></li>
+          <li id="how_to"><%= link_to_pages(raw("Как сделать <br />заказ"), "how_to") %></li>
+          <li id="dostavka"><%=  link_to_pages('Доставка', "dostavka") %></li>
+          <li id="for_ppartners"><%=  link_to_pages('Партнерам', "partneram") %></li>
+          <li id="contacts"><%=  link_to_pages('Контакты', "contacts") %></li>
         </ul>
     </div>
       <div style="position: relative;">
@@ -69,7 +75,7 @@
                 <%= render :partial => 'news/news_show', :collection => @news_show %>
                 <% if params[:id] == 'home' %>
             <div id="info_b">
-            	<p>Мусульманская одежда HIJAB FARD</p>
+              <%= raw @page.description %>
             </div>
                 <% end %>
         </div>

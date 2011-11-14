@@ -38,7 +38,7 @@ class PagesController < HighVoltage::PagesController
   end
 
   def home
-    @cart = current_cart
+    show
   end
 
   protected
