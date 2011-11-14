@@ -3,10 +3,10 @@
 <div id="news_content">
   <%= image_tag(@news.avatar.url) %>
 <p>
-  <%= @news.description %>
+  <%= raw @news.description %>
 </p>
 </div>
 <% if admin_signed_in?  %>
-<%= link_to 'Edit', edit_news_path(@news) %> |
-<%= link_to 'Back', news_index_path %>
+<%= link_to 'Редактировать', edit_news_path(@news) %> |
+<%= link_to 'Назад', news_index_path %>
 <% end %>

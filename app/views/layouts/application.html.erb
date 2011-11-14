@@ -17,12 +17,18 @@
     <div id="section">
 	<div id="nav">
     	<ul>
-            <li id="glav_item"><%=  link_to "Главная", root_path %></li>
-            <li id="shop_item"><%=  link_to_pages('Магазины', "shops") %></li>
-            <li id="how_to"><%= link_to_pages(raw("Как сделать <br />заказ"), "how_to") %></li>
-            <li id="dostavka"><%=  link_to_pages('Доставка', "dostavka") %></li>
-            <li id="for_ppartners"><%=  link_to_pages('Партнерам', "partneram") %></li>
-            <li id="contacts"><%=  link_to_pages('Контакты', "contacts") %></li>
+          <li id="glav_item">
+            <% if admin_signed_in? %>
+            <%=  link_to_pages('Главная', "home") %>
+            <% else %>
+            <%=  link_to "Главная", root_path %>
+            <% end %>
+          </li>
+          <li id="shop_item"><%=  link_to_pages('Магазины', "shops") %></li>
+          <li id="how_to"><%= link_to_pages(raw("Как сделать <br />заказ"), "how_to") %></li>
+          <li id="dostavka"><%=  link_to_pages('Доставка', "dostavka") %></li>
+          <li id="for_ppartners"><%=  link_to_pages('Партнерам', "partneram") %></li>
+          <li id="contacts"><%=  link_to_pages('Контакты', "contacts") %></li>
         </ul>
     </div>
       <div style="position: relative;">
@@ -33,26 +39,10 @@
           Каталог
         </p>
         <ul>
-          <li><%=  link_to "Платья", category_path(:id => 1) %></li>
-          <li><%=  link_to "Сарафаны", category_path(:id => 2) %></li>
-          <li><%=  link_to "Туники", category_path(:id => 3) %></li>
-          <li><%=  link_to "Юбки", category_path(:id => 4) %></li>
-          <li><%=  link_to "Сарафаны", category_path(:id => 5) %></li>
-          <li><%=  link_to "Одежда для дома", category_path(:id => 6) %></li>
-          <li><%=  link_to "Изделия из химары", category_path(:id => 7) %></li>
-          <li><%=  link_to "Амирки", category_path(:id => 8) %></li>
-          <li><%=  link_to "Палантины", category_path(:id => 9) %></li>
-          <li><%=  link_to "Водолазки кардиганы", category_path(:id => 10) %></li>
-          <li><%=  link_to "Платья для беременных и кормящих мам", category_path(:id => 11) %></li>
-          <li><%=  link_to "Одежда для подростков", category_path(:id => 12) %></li>
-          <li><%=  link_to "Аксессуары", category_path(:id => 13) %></li>
-          <li><%=  link_to "Распродажа", category_path(:id => 14) %></li>
-          <li><%=  link_to "Мужская одежда", category_path(:id => 15) %></li>
-
+          <% @catalog_links.each do |catalog_link| %>
+            <li><%= link_to catalog_link.name, category_path(:id => catalog_link) %></li>
+          <% end %>
         </ul>
-      </div>
-      <div id="sidebar_rassilka">
-        <%= render :partial => 'distributions/distributions_index' %>
       </div>
       <div id="sidebar_bottom">
         <div id="sidebar_bottom_menu1">
@@ -85,10 +75,7 @@
                 <%= render :partial => 'news/news_show', :collection => @news_show %>
                 <% if params[:id] == 'home' %>
             <div id="info_b">
-            	<p>Мусульманская одежда HIJAB FARD</p>
-                <p>Мусульманская одежда торговой марки Irada – это: качественный пошив, хорошая ткань, отличная посадка по фигуре, скромные, но при этом модные и стильные модели, а самое главное – адекватная цена!</p>
-                <p>Мусульманская одежда отшивается в крупных цехах, с огромным опытом работы, ткань используется только производства Турции, Италии, Германии; лекала заказываем в компании по производству лекал. Опыт и новейшие технологии позволяют нам быть уверенными, что в результате мусульманская одежда, производимая нами, идеально садится на любую фигуру мусульманки. Наши дизайнеры со всей ответственностью подходят к поставленной задаче, а именно придумывают модели хиджабов, которые соответствуют шариату, но при этом изучают и модные веяния каждого сезона и применяют эти знания на практике. Своим внешним видом мусульманка рассказывает об исламе, зачастую о роли мусульманки в обществе судят именно по тому как она выглядит.</p>
-                <p>Наша задача показать, что мусульманка в хиджабе может выглядеть стильно и модно. Мы используем цвета и стили, модные в этом сезоне. Мусульманка в одежде фирмы «Irada» - стильная девушка, женщина с хорошим вкусом, соблюдающая нормы шариата.</p>
+              <%= raw @page.description %>
             </div>
                 <% end %>
         </div>

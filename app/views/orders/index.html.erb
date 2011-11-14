@@ -1,7 +1,7 @@
 <% title "Покупатели" %>
 <h1>Покупатели</h1>
 
-<table id="orders_table">
+<table id="orders_table" cellpadding = 0 cellspacing = 0>
   <tr>
     <th>Имя</th>
     <th>Адрес</th>
@@ -26,5 +26,9 @@
 
 <br />
 
-<%= link_to 'New Order', new_order_path %>
 <p><%= will_paginate @orders %></p>
+<script "text/javascript">
+  $('#orders_table tr').hover(
+  function() {$(this).css({ background: '#cccccc'})},
+  function() {$(this).css({ background: '#fff'})} );
+</script>

@@ -857,6 +857,7 @@ fieldset {
 #orders_table td {
     font: 16px  "Myriad Pro", Verdana, Geneva, sans-serif;
     color: #663366;
+    padding: 10px;
 }
 #orders_table th {
     font: 18px  "Myriad Pro", Verdana, Geneva, sans-serif;
@@ -927,3 +928,11 @@ fieldset {
     height: 1%; }
   *:first-child + html .digg_pagination {
     overflow: hidden; }
+
+#news_table {
+
+}
+#news_table td {
+  vertical-align: top;
+  padding:  10px;
+}

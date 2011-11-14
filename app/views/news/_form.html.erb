@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title,"Название" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :short_description %><br />
+    <%= f.label :short_description, "Краткое описание" %><br />
     <%= f.cktext_area :short_description, :toolbar=>'Full', :width=>'740px', :height=>'150px' %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description, "Описание" %><br />
     <%= f.cktext_area :description, :toolbar=>'Full', :width=>'740px', :height=>'400px' %>
   </div>
   <div class="field">
