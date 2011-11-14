@@ -1,3 +1,4 @@
+# coding: utf-8
 class CategoriesController < ApplicationController
 
   def new
@@ -5,7 +6,6 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @news }
     end
   end
 
@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to(@category, :notice => 'News was successfully created.') }
+        format.html { redirect_to(@category, :notice => 'Катагория была успешно создана.')}
       else
         format.html { render :action => "new" }
       end
@@ -44,8 +44,8 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
     respond_to do |format|
-      if @category.update_attributes(params[:news])
-        format.html { redirect_to(@category, :notice => 'News was successfully updated.') }
+      if @category.update_attributes(params[:category])
+        format.html { redirect_to(categories_path, :notice => 'Катагория была успешно обновлена.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

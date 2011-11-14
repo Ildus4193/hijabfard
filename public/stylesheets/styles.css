@@ -927,3 +927,11 @@ fieldset {
     height: 1%; }
   *:first-child + html .digg_pagination {
     overflow: hidden; }
+
+#news_table {
+
+}
+#news_table td {
+  vertical-align: top;
+  padding:  10px;
+}

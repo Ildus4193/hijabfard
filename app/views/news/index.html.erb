@@ -1,27 +1,30 @@
-<h1>Listing news</h1>
+<h1>Просмотр новостей</h1>
 
-<table>
+<table id="news_table" cellpadding = 0 cellspacing = 0>
   <tr>
-    <th>Title</th>
-    <th>Short description</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
+    <th>Название</th>
+    <th>Краткое описание</th>
+    <th>Описание</th>
     <th></th>
   </tr>
 
 <% @news.each do |news| %>
   <tr>
     <td><%= news.title %></td>
-    <td><%= news.short_description %></td>
-    <td><%= news.description %></td>
-    <td><%= link_to 'Show', news %></td>
-    <td><%= link_to 'Edit', edit_news_path(news) %></td>
-    <td><%= link_to 'Destroy', news, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= raw news.short_description %></td>
+    <td><%= raw news.description %></td>
+    <td><%= link_to 'Просмотр', news %>
+        <%= link_to 'Редактировать', edit_news_path(news) %>
+        <%= link_to 'Удалить', news, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New News', new_news_path %>
+<%= link_to 'Добавить новости', new_news_path %>
+<script "text/javascript">
+  $('#news_table tr').hover(
+  function() {$(this).css({ background: '#cccccc'})},
+  function() {$(this).css({ background: '#fff'})} );
+</script>
