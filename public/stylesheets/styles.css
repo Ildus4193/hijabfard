@@ -936,3 +936,18 @@ fieldset {
   vertical-align: top;
   padding:  10px;
 }
+
+#top_menu {
+  position: relative;
+  left: 420px;
+  top: -8px;
+}
+
+#top_menu li {
+  display: inline;
+  margin: 0 5px;
+}
+
+#top_menu li a {
+  font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;
+}
