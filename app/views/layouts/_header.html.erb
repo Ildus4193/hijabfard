@@ -18,27 +18,15 @@
       $('#user_new').hide();
       });
     </script>
-    <span style=" position: relative; top: 10px; left: 455px; ">
-        <%= link_to 'Продукты', products_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"    %>
-    </span>
-    <span style=" position: relative; top: 10px; left: 460px; ">
-        <%= link_to 'Новости', news_index_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"    %>
-    </span>
-    <span style=" position: relative; top: 10px; left: 465px; ">
-        <%= link_to 'Категории', categories_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"    %>
-    </span>
-    <span style=" position: relative; top: 10px; left: 470px; ">
-        <%= link_to 'Покупатели', orders_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"    %>
-    </span>
-    <span style=" position: relative; top: 10px; left: 475px; ">
-        <%= link_to 'Пользователи', orders_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"   %>
-    </span>
-    <span style=" position: relative; top: 10px; left: 480px; ">
-      <%= link_to "Мой профиль", edit_admin_registration_path, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"  %>
-      </span>
-      <span style=" position: relative; top: 10px; left: 485px; ">
-      <%= link_to "Выйти", destroy_admin_session_path, :method => :delete, :style => "font: 14px 'Myriad Pro', Verdana, Geneva, sans-serif; color: #cccccc;"  %>
-      </span>
+    <ul id="top_menu">
+      <li><%= link_to 'Продукты', products_path%></li>
+      <li><%= link_to 'Новости', news_index_path%></li>
+      <li><%= link_to 'Категории', categories_path%></li>
+      <li><%= link_to 'Покупатели', orders_path%></li>
+      <li><%= link_to 'Пользователи', orders_path%></li>
+      <li><%= link_to "Мой профиль", edit_admin_registration_path%></li>
+      <li><%= link_to "Выйти", destroy_admin_session_path, :method => :delete%></li>
+    </ul>
     <% end %>
     <% end %>
   </div>
